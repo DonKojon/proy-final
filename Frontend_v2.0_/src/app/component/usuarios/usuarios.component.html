@@ -1,0 +1,81 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Gestión de Usuarios</h2>
+
+  <!-- Formulario -->
+  <form (ngSubmit)="guardarUsuario()" #usuarioForm="ngForm" class="card p-4 shadow-sm mb-5">
+    <input type="hidden" [(ngModel)]="usuario.id" name="id" />
+
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" id="nombre" [(ngModel)]="usuario.nombre" name="nombre" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Apellido</label>
+      <input type="text" id="apellido" [(ngModel)]="usuario.apellido" name="apellido" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" id="email" [(ngModel)]="usuario.email" name="email" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="pass" class="form-label">Contraseña</label>
+      <input type="password" id="pass" [(ngModel)]="usuario.pass" name="pass" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="rol" class="form-label">Rol</label>
+      <select id="rol" [(ngModel)]="usuario.role_id" name="role_id" class="form-select" required>
+        <option value="" disabled selected>Selecciona un rol</option>
+        <option *ngFor="let rol of roles" [value]="rol.id">{{ rol.nombre }}</option>
+      </select>
+    </div>
+
+    <div class="d-flex justify-content-end gap-2">
+      <button type="submit" class="btn btn-primary">
+        {{ usuario.id ? 'Actualizar' : 'Registrar' }}
+      </button>
+      <button type="button" (click)="limpiarFormulario()" class="btn btn-secondary">
+        Cancelar
+      </button>
+    </div>
+  </form>
+
+  <!-- Tabla -->
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h3 class="card-title mb-3">Lista de Usuarios</h3>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Email</th>
+              <th>Rol</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let u of usuarios">
+              <td>{{ u.id }}</td>
+              <td>{{ u.nombre }}</td>
+              <td>{{ u.apellido }}</td>
+              <td>{{ u.email }}</td>
+              <td>{{ getNombreRol(u.role_id) }}</td>
+              <td>
+                <div class="d-flex gap-2">
+                  <button (click)="editarUsuario(u)" class="btn btn-warning btn-sm">Editar</button>
+                  <button (click)="eliminarUsuario(u.id!)" class="btn btn-danger btn-sm">Eliminar</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

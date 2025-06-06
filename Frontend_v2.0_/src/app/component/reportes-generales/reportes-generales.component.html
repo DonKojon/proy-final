@@ -1,0 +1,79 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Reportes Generales (Director)</h2>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-header">
+      Filtros para Reportes Generales
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="row g-3 align-items-end">
+          <div class="col-md-6">
+            <label for="tipoReporteGeneral" class="form-label">Tipo de Reporte General</label>
+            <select id="tipoReporteGeneral" class="form-select">
+              <option selected disabled>Seleccionar Tipo...</option>
+              <option value="notasGlobales">Notas Globales por Curso</option>
+              <option value="asistenciaGlobal">Asistencia General por Curso</option>
+              <option value="tareasCompletadas">Tareas Completadas General</option>
+              <option value="resumenUsuarios">Resumen de Usuarios por Rol</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <label for="fechaInicioGeneral" class="form-label">Fecha Inicio</label>
+            <input type="date" class="form-control" id="fechaInicioGeneral">
+          </div>
+          <div class="col-md-3">
+            <label for="fechaFinGeneral" class="form-label">Fecha Fin</label>
+            <input type="date" class="form-control" id="fechaFinGeneral">
+          </div>
+          <div class="col-12 text-end">
+            <button type="submit" class="btn btn-primary">Generar Reporte General</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card shadow-sm mt-4">
+    <div class="card-header">
+      Resultados del Reporte General
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <!-- Las cabeceras de la tabla se adaptarán según el tipo de reporte general -->
+              <th>Parámetro</th>
+              <th>Valor</th>
+              <th>Detalle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Ejemplo de fila, reemplazar con *ngFor="let item of reporteGeneralData" -->
+            <tr>
+              <td>Promedio General de Notas</td>
+              <td>88.5</td>
+              <td>En todos los cursos activos</td>
+            </tr>
+            <tr>
+              <td>Porcentaje de Asistencia General</td>
+              <td>92%</td>
+              <td>Total de clases registradas</td>
+            </tr>
+            <tr>
+              <td>Tareas Entregadas / Asignadas</td>
+              <td>85 / 100</td>
+              <td>Total del periodo seleccionado</td>
+            </tr>
+            <!-- Fin ejemplo -->
+          </tbody>
+        </table>
+      </div>
+       <!-- Si no hay datos de reporte general -->
+      <div class="alert alert-info mt-3" *ngIf="reporteGeneralData?.length === 0">
+        No hay datos para mostrar en el reporte general. Genera un reporte usando los filtros.
+      </div>
+    </div>
+  </div>
+</div>

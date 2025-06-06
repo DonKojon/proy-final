@@ -1,0 +1,94 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Reportes del Profesor</h2>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-header">
+      Filtros de Reporte
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="row g-3 align-items-end">
+          <div class="col-md-4">
+            <label for="tipoReporte" class="form-label">Tipo de Reporte</label>
+            <select id="tipoReporte" class="form-select">
+              <option selected disabled>Seleccionar Tipo...</option>
+              <option value="notas">Notas</option>
+              <option value="asistencia">Asistencia</option>
+              <option value="tareas">Tareas</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="materia" class="form-label">Materia/Curso</label>
+            <select id="materia" class="form-select">
+              <option selected disabled>Todas las Materias...</option>
+              <!-- Opciones generadas con *ngFor -->
+              <option value="1">Matemáticas</option>
+              <option value="2">Historia</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="estudiante" class="form-label">Estudiante</label>
+            <select id="estudiante" class="form-select">
+              <option selected disabled>Todos los Estudiantes...</option>
+              <!-- Opciones generadas con *ngFor -->
+              <option value="1">Estudiante 1</option>
+              <option value="2">Estudiante 2</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="fechaInicio" class="form-label">Fecha Inicio</label>
+            <input type="date" class="form-control" id="fechaInicio">
+          </div>
+          <div class="col-md-4">
+            <label for="fechaFin" class="form-label">Fecha Fin</label>
+            <input type="date" class="form-control" id="fechaFin">
+          </div>
+          <div class="col-md-4 text-end">
+            <button type="submit" class="btn btn-primary">Generar Reporte</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card shadow-sm mt-4">
+    <div class="card-header">
+      Resultados del Reporte
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <!-- Las cabeceras de la tabla se adaptarán según el tipo de reporte -->
+              <th>Columna 1</th>
+              <th>Columna 2</th>
+              <th>Columna 3</th>
+              <th>Columna 4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Ejemplo de fila, reemplazar con *ngFor="let item of reporteData" -->
+            <tr>
+              <td>Dato 1</td>
+              <td>Dato 2</td>
+              <td>Dato 3</td>
+              <td>Dato 4</td>
+            </tr>
+            <tr>
+              <td>Dato A</td>
+              <td>Dato B</td>
+              <td>Dato C</td>
+              <td>Dato D</td>
+            </tr>
+            <!-- Fin ejemplo -->
+          </tbody>
+        </table>
+      </div>
+       <!-- Si no hay datos de reporte -->
+      <div class="alert alert-info mt-3" *ngIf="reporteData?.length === 0">
+        No hay datos para mostrar en el reporte. Genera un reporte usando los filtros.
+      </div>
+    </div>
+  </div>
+</div>

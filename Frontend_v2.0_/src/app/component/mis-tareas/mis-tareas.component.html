@@ -1,0 +1,51 @@
+<div class="tasks-page">
+  <div class="container mt-4">
+    <h2 class="text-center mb-4 tasks-title">Mis Tareas</h2>
+
+    <div class="tasks-summary-card card shadow-sm mb-4">
+      <div class="card-body text-center">
+        <h4>Tareas Pendientes</h4>
+        <p class="pending-tasks-count">{{ tareasPendientes }}</p>
+      </div>
+    </div>
+
+    <div class="card shadow-sm tasks-table-card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle tasks-table">
+            <thead class="table-dark">
+              <tr>
+                <th>Materia</th>
+                <th>Descripción</th>
+                <th>Fecha de Entrega</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let tarea of tareas">
+                <td>{{ tarea.materia }}</td>
+                <td>{{ tarea.descripcion }}</td>
+                <td>{{ tarea.fechaEntrega }}</td>
+                <td>
+                  <span class="badge {{ tarea.estado === 'Pendiente' ? 'bg-warning text-dark' : 'bg-success' }}">
+                    {{ tarea.estado }}
+                  </span>
+                </td>
+                <td>
+                  <div class="d-flex gap-2">
+                    <button *ngIf="tarea.estado === 'Pendiente'" class="btn btn-primary btn-sm">Entregar</button>
+                    <button class="btn btn-secondary btn-sm">Ver Historial</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="alert alert-info mt-3 text-center" *ngIf="tareas?.length === 0">
+          No tienes tareas asignadas.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

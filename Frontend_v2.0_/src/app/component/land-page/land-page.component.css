@@ -1,0 +1,13 @@
+.btn-login {
+  position: relative;
+  margin-top: 550px; /* Separa el footer del botón */
+}
+.info-section {
+  max-height: 400px; /* Ajusta según necesidad */
+  padding-bottom: 100px; /* Agrega espacio para que el botón no quede cubierto */
+}
+
+footer {
+  position: relative;
+  margin-top: 50px; /* Separa el footer del botón */
+}

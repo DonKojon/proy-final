@@ -1,0 +1,113 @@
+/* Contenedor principal */
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.title {
+  text-align: center;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Formulario */
+.form-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Tabla */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.styled-table th {
+  background-color: #ddd;
+  color: #333;
+}
+
+/* Fila alterna */
+.styled-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Botones */
+.btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Botón Agregar */
+.btn-add {
+  background-color: #5c8d89;
+  color: white;
+}
+
+.btn-add:hover {
+  background-color: #4a736e;
+}
+
+/* Botón Editar */
+.btn-edit {
+  background-color: #f4a261;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #e48845;
+}
+
+/* Botón Guardar */
+.btn-save {
+  background-color: #2a9d8f;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #1f7d73;
+}
+
+/* Botón Eliminar */
+.btn-delete {
+  background-color: #e76f51;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #d65b3d;
+}
+
+/* Input de edición */
+.input-edit {
+  padding: 5px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  width: 100%;
+}

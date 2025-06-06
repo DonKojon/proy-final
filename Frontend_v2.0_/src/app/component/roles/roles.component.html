@@ -1,0 +1,65 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Gestión de Roles</h2>
+
+  <!-- Formulario para agregar rol -->
+  <form (ngSubmit)="agregarRol()" #rolForm="ngForm" class="card p-4 shadow-sm mb-4">
+    <div class="mb-3">
+      <label for="rolNombre" class="form-label">Nombre del Rol</label>
+      <input
+        type="text"
+        id="rolNombre"
+        [(ngModel)]="nuevoRol.nombre"
+        name="rolNombre"
+        class="form-control"
+        placeholder="Ej. Administrador"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-success">Agregar Rol</button>
+  </form>
+
+  <!-- Lista de roles existentes -->
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h3 class="card-title mb-3">Lista de Roles</h3>
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let rol of roles">
+              <td>{{ rol.id }}</td>
+              <td>
+                <div *ngIf="rolEditandoId === rol.id; else vistaNormal">
+                  <input
+                    [(ngModel)]="rolEditandoNombre"
+                    name="rolNombreEditado{{ rol.id }}"
+                    class="form-control"
+                  />
+                </div>
+                <ng-template #vistaNormal>
+                  {{ rol.nombre }}
+                </ng-template>
+              </td>
+              <td>
+                <div *ngIf="rolEditandoId === rol.id; else botonesNormales">
+                  <button class="btn btn-primary btn-sm me-1" (click)="guardarEdicion(rol)">Guardar</button>
+                  <button class="btn btn-secondary btn-sm" (click)="cancelarEdicion()">Cancelar</button>
+                </div>
+                <ng-template #botonesNormales>
+                  <button class="btn btn-warning btn-sm me-1" (click)="editarRol(rol)">Editar</button>
+                  <button class="btn btn-danger btn-sm" (click)="eliminarRol(rol.id)">Eliminar</button>
+                </ng-template>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

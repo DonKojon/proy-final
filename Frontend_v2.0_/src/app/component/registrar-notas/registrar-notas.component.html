@@ -1,0 +1,95 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Registrar Notas</h2>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-header">
+      Ingresar Nueva Nota
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="estudiante" class="form-label">Estudiante</label>
+            <select id="estudiante" class="form-select">
+              <option selected disabled>Seleccionar Estudiante...</option>
+              <!-- Opciones generadas con *ngFor -->
+              <option value="1">Estudiante 1</option>
+              <option value="2">Estudiante 2</option>
+            </select>
+          </div>
+           <div class="col-md-6">
+            <label for="materia" class="form-label">Materia/Curso</label>
+            <select id="materia" class="form-select">
+              <option selected disabled>Seleccionar Materia/Curso...</option>
+              <!-- Opciones generadas con *ngFor -->
+              <option value="1">Matemáticas</option>
+              <option value="2">Historia</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="nota" class="form-label">Nota</label>
+            <input type="number" class="form-control" id="nota" placeholder="Ej: 85">
+          </div>
+          <div class="col-md-4">
+            <label for="fecha" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="fecha">
+          </div>
+           <div class="col-md-4">
+            <label for="periodo" class="form-label">Periodo</label>
+            <input type="text" class="form-control" id="periodo" placeholder="Ej: 1er Trimestre">
+          </div>
+          <div class="col-12">
+            <label for="observaciones" class="form-label">Observaciones</label>
+            <textarea class="form-control" id="observaciones" rows="3"></textarea>
+          </div>
+          <div class="col-12 text-end">
+            <button type="submit" class="btn btn-primary">Guardar Nota</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card shadow-sm mt-4">
+    <div class="card-header">
+      Notas Registradas
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>Estudiante</th>
+              <th>Materia/Curso</th>
+              <th>Nota</th>
+              <th>Fecha</th>
+              <th>Periodo</th>
+              <th>Observaciones</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Ejemplo de fila, reemplazar con *ngFor="let nota of listaNotas" -->
+            <tr>
+              <td>Estudiante Ejemplo</td>
+              <td>Matemáticas</td>
+              <td>88</td>
+              <td>2024-06-05</td>
+               <td>2do Trimestre</td>
+              <td>Participó activamente</td>
+              <td>
+                <button class="btn btn-warning btn-sm me-2">Editar</button>
+                <button class="btn btn-danger btn-sm">Eliminar</button>
+              </td>
+            </tr>
+            <!-- Fin ejemplo -->
+          </tbody>
+        </table>
+      </div>
+       <!-- Si no hay notas registradas -->
+      <div class="alert alert-info mt-3" *ngIf="listaNotas?.length === 0">
+        No hay notas registradas aún.
+      </div>
+    </div>
+  </div>
+</div>

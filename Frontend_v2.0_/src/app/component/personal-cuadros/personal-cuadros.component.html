@@ -1,0 +1,123 @@
+<div class="container">
+  <h2 class="text-center mb-4">Registrar Personal de Cuadros</h2>
+
+  <form [formGroup]="personalForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label for="grado" class="form-label">Grado</label>
+          <input type="text" class="form-control" id="grado" formControlName="grado">
+        </div>
+        <div class="mb-3">
+          <label for="arma" class="form-label">Arma</label>
+          <input type="text" class="form-control" id="arma" formControlName="arma">
+        </div>
+        <div class="mb-3">
+          <label for="especialidad" class="form-label">Especialidad</label>
+          <input type="text" class="form-control" id="especialidad" formControlName="especialidad">
+        </div>
+        <div class="mb-3">
+          <label for="apellido_paterno" class="form-label">Apellido Paterno</label>
+          <input type="text" class="form-control" id="apellido_paterno" formControlName="apellido_paterno">
+        </div>
+        <div class="mb-3">
+          <label for="apellido_materno" class="form-label">Apellido Materno</label>
+          <input type="text" class="form-control" id="apellido_materno" formControlName="apellido_materno">
+        </div>
+        <div class="mb-3">
+          <label for="nombres" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="nombres" formControlName="nombres">
+        </div>
+        <div class="mb-3">
+          <label for="ci" class="form-label">Cédula de Identidad</label>
+          <input type="text" class="form-control" id="ci" formControlName="ci">
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label for="celular" class="form-label">Celular</label>
+          <input type="number" class="form-control" id="celular" formControlName="celular">
+        </div>
+        <div class="mb-3">
+          <label for="direccion" class="form-label">Dirección</label>
+          <input type="text" class="form-control" id="direccion" formControlName="direccion">
+        </div>
+        <div class="mb-3">
+          <label for="correo_electronico" class="form-label">Correo Electrónico</label>
+          <input type="email" class="form-control" id="correo_electronico" formControlName="correo_electronico">
+        </div>
+        <div class="mb-3">
+          <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+          <input type="date" class="form-control" id="fecha_nacimiento" formControlName="fecha_nacimiento">
+        </div>
+        <div class="mb-3">
+          <label for="lugar_nacimiento" class="form-label">Lugar de Nacimiento</label>
+          <input type="text" class="form-control" id="lugar_nacimiento" formControlName="lugar_nacimiento">
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label for="estado_civil" class="form-label">Estado Civil</label>
+          <select class="form-control" id="estado_civil" formControlName="estado_civil">
+            <option value="Soltero">Soltero</option>
+            <option value="Casado">Casado</option>
+            <option value="Divorciado">Divorciado</option>
+            <option value="Viudo">Viudo</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="numero_hijos" class="form-label">Número de Hijos</label>
+          <input type="number" class="form-control" id="numero_hijos" formControlName="numero_hijos">
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-4">
+      <!-- <button type="submit" class="btn btn-success" [disabled]="personalForm.invalid">Guardar Datos</button> -->
+      <button type="submit" class="btn btn-success">Guardar Datos</button>
+
+    </div>
+  </form>
+
+  <!-- Tabla de listado -->
+<!-- Tabla de listado -->
+<h3 class="text-center mt-4">Lista de Personal</h3>
+<table class="table table-striped mt-3">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Grado</th>
+      <th>Arma</th>
+      <th>Especialidad</th>
+      <th>Apellido Paterno</th>
+      <th>Apellido Materno</th>
+      <th>Nombres</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let persona of personalList; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ persona.grado }}</td>
+      <td>{{ persona.arma }}</td>
+      <td>{{ persona.especialidad }}</td>
+      <td>{{ persona.apellido_paterno }}</td>
+      <td>{{ persona.apellido_materno }}</td>
+      <td>{{ persona.nombres }}</td>
+      <td>
+        <!-- Botón de Editar -->
+        <button class="btn btn-warning btn-sm me-2" (click)="editarPersona(i)">
+          ✏️ Editar
+        </button>
+        <!-- Botón de Eliminar -->
+        <button class="btn btn-danger btn-sm" (click)="eliminarPersona(i)">
+          🗑️ Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

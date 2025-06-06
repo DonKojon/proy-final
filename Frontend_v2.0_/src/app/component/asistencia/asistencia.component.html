@@ -1,0 +1,46 @@
+<div class="attendance-page">
+  <div class="container mt-4">
+    <h2 class="text-center mb-4 attendance-title">Mi Asistencia</h2>
+
+    <div class="attendance-summary-card card shadow-sm mb-4">
+      <div class="card-body text-center">
+        <h4>Porcentaje de Asistencia General</h4>
+        <p class="attendance-percentage">{{ porcentajeAsistenciaTotal | number:'1.1-2' }}%</p>
+      </div>
+    </div>
+
+    <div class="card shadow-sm attendance-table-card">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover align-middle attendance-table text-center">
+            <thead class="table-dark">
+              <tr>
+                <th rowspan="2">Materia</th>
+                <th [attr.colspan]="fechasAsistencia.length">Fechas de Asistencia</th>
+              </tr>
+              <tr>
+                <th *ngFor="let fecha of fechasAsistencia">{{ fecha | date:'dd/MM' }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let materia of asistenciaPorMateria">
+                <td class="text-start">{{ materia.materia }}</td>
+                <td *ngFor="let fecha of fechasAsistencia">
+                  <span class="badge 
+                    {{ materia.registros[fecha] === 'Presente' ? 'bg-success' :
+                       materia.registros[fecha] === 'Ausente' ? 'bg-danger' :
+                       materia.registros[fecha] === 'Permiso' ? 'bg-info' : 'bg-secondary' }}">
+                    {{ materia.registros[fecha] || 'N/A' }}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="alert alert-info mt-3 text-center" *ngIf="asistenciaPorMateria?.length === 0">
+          No hay registros de asistencia disponibles.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+.notes-page {
+  background: url('/assets/student_bg.jpg') no-repeat center center/cover; /* Fondo de la página */
+  min-height: calc(100vh - 60px); /* Ajustar altura para dejar espacio al navbar */
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.95); /* Fondo semitransparente para el contenido */
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.notes-title {
+  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.notes-summary-card {
+  background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+}
+
+.notes-summary-card:hover {
+  transform: translateY(-3px);
+}
+
+.notes-summary-card h4 {
+  color: #34495e;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.average-score {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #28a745; /* Verde para notas altas */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.notes-table-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Asegura que las esquinas de la tabla se redondeen */
+}
+
+.notes-table {
+  border: 1px solid #dee2e6; /* Bordes generales para la tabla */
+}
+
+.notes-table th, .notes-table td {
+  border: 1px solid #dee2e6;
+  padding: 10px 15px; /* Ajustar padding */
+  vertical-align: middle;
+}
+
+.notes-table thead th {
+  background-color: #34495e; /* Azul oscuro para el encabezado */
+  color: white;
+  font-weight: 600;
+  text-align: center; /* Centrar texto en encabezados */
+}
+
+.notes-table tbody tr:hover {
+  background-color: #f0f0f0; /* Ligeramente más claro al pasar el mouse */
+  cursor: pointer;
+}
+
+.notes-table td {
+  padding: 12px 20px;
+  vertical-align: middle;
+}
+
+.alert-info {
+  background-color: #e0f2f7;
+  color: #007bff;
+  border-color: #b3e0ff;
+  font-weight: 500;
+}

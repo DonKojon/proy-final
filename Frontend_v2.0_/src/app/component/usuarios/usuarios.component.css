@@ -1,0 +1,19 @@
+.container {
+  max-width: 800px;
+}
+
+h2, h3 {
+  color: #2c3e50;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+.btn {
+  min-width: 100px;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}

@@ -1,0 +1,70 @@
+/* 🔹 Fondo con imagen multicam */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: url('/assets/multicam.jpg') no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+/* 🔹 Tarjeta de login con transparencia */
+.card {
+  background: rgba(0, 0, 0, 0.8); /* Fondo oscuro con transparencia */
+  color: white;
+  border-radius: 10px;
+  padding: 25px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔹 Header con logo centrado */
+.card-header {
+  text-align: center;
+  padding: 20px 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* 🔹 Estilos para el logo */
+.logo {
+  width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+/* 🔹 Inputs más estilizados */
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+/* 🔹 Botón con mejor diseño */
+.btn-primary {
+  background-color: #4caf50;
+  border: 1px;
+  padding: 12px;
+  font-size: 1.1rem;
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 0.5cm; /* Espacio arriba del botón */
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}
+
+/* 🔹 Footer responsivo */
+footer {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin-top: 20px;
+}

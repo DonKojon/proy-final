@@ -1,0 +1,15 @@
+.main-content {
+  margin-left: 260px; /* Espacio para el sidebar expandido */
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.main-content.collapsed-sidebar {
+  margin-left: 60px; /* Espacio para el sidebar colapsado */
+}
+
+i {
+  display: inline-block !important;
+  font-style: normal;
+  font-size: 16px;
+  color: white !important;
+}

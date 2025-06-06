@@ -1,0 +1,45 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Historial del Estudiante</h2>
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>Fecha</th>
+              <th>Actividad</th>
+              <th>Detalle</th>
+              <th>Resultado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Ejemplo de fila, reemplazar con *ngFor="let item of historial" -->
+            <tr>
+              <td>2024-06-08</td>
+              <td>Entrega de Tarea</td>
+              <td>Resolver ejercicios pag. 50 (Matemáticas)</td>
+              <td>Entregado</td>
+            </tr>
+            <tr>
+              <td>2024-06-01</td>
+              <td>Consulta de Nota</td>
+              <td>Nota de Matemáticas</td>
+              <td>85</td>
+            </tr>
+             <tr>
+              <td>2024-05-30</td>
+              <td>Registro de Asistencia</td>
+              <td>Clase de Historia</td>
+              <td>Presente</td>
+            </tr>
+            <!-- Fin ejemplo -->
+          </tbody>
+        </table>
+      </div>
+       <!-- Si no hay historial -->
+      <div class="alert alert-info mt-3" *ngIf="historial?.length === 0">
+        No hay registros en el historial.
+      </div>
+    </div>
+  </div>
+</div>
